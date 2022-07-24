@@ -1,0 +1,854 @@
+/*--------------------------------------------------------------
+# Important
+--------------------------------------------------------------*/
+:root {
+    --mainColor: #1089ff;
+    --bgColor: #f8f9fa;
+    --blackColor: #000;
+    --whiteColor: #fff;
+    --hoverMe: background-image: linear-gradient(to right, rgba(0,0,0,.05), rgba(0,0,0,.05));
+    --mainPadding: 60px 0;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    color: gray;
+}
+
+a {
+    color: var(--mainColor);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: var(--mainPadding);
+    overflow: hidden;
+    position: relative;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--mainColor);
+}
+
+.section-title h3 {
+    padding-bottom: 20px;
+    color: var(--blackColor);
+}
+
+.section-title h3::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: var(--mainColor);
+    bottom: 0px;
+    left: calc(50% - 25px);
+}
+
+/*--------------------------------------------------------------
+# Start Back-To-Top
+--------------------------------------------------------------*/
+.back-to-top{
+    background: var(--mainColor);
+    color: var(--whiteColor);
+    padding: 5px 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 9999;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.back-to-top:hover {
+    background-image: linear-gradient(to right, rgba(0,0,0, 0.05), rgba(0,0,0, 0.05));
+    color: var(--whiteColor);
+}
+/*--------------------------------------------------------------
+# End Back-To-Top
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+#  Stat Topbar
+--------------------------------------------------------------*/
+.topbar {
+    background: var(--bgColor);
+}
+
+@media (max-width: 991px) {
+    .topbar {
+        display: none;
+    }
+}
+
+.topbar .topbar-info {
+    display: flex;
+}
+
+.topbar .topbar-info .topbar-icon {
+    margin-right: 10px;
+}
+
+.topbar .topbar-info .topbar-icon i {
+    font-size: 25px;
+    background: var(--mainColor);
+    color: var(--whiteColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.topbar .topbar-info .topbar-title span:first-child {
+    font-weight: 700;
+    display: block;
+}
+/*--------------------------------------------------------------
+# End Topbar
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Header
+--------------------------------------------------------------*/
+#header {
+    padding: 20px 0;
+    z-index: 997;
+    background: var(--mainColor);
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+@media (max-width: 991px) {
+    #header {
+        background-color: var(--bgColor);
+        position: fixed;
+        width: 100%;
+        height: 115px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+    padding: 0;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    padding: 5px 15px;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--whiteColor);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.navbar ul li a.active,
+.navbar ul li:hover a {
+    background-color: var(--whiteColor);
+    color: var(--mainColor);
+    border-radius: 5px;
+}
+
+@media (max-width: 991px) {
+    .navbar ul li a.active,
+    .navbar ul li:hover a {
+        background-color: var(--mainColor);
+        color: var(--whiteColor);
+        border-radius: 5px;
+    }
+}
+
+/**
+  * Mobile Navigation 
+*/
+.mobile-nav-toggle {
+    color: var(--mainColor);
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+    .navbar ul {
+        display: none;
+    }
+    
+}
+
+.navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(20, 21, 28, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--bgColor);
+}
+
+.navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: var(--bgColor);
+    overflow-y: auto;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.navbar-mobile a {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 15px;
+    color: #2a2c39;
+    display: block;
+}
+/*--------------------------------------------------------------
+# End Header
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Hero
+--------------------------------------------------------------*/
+.hero {
+    background: url("../img/hero/hero_2.jpg") no-repeat top center;
+    background-size: cover;
+    position: relative;
+    min-height: 700px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+    position: absolute;
+    color: var(--whiteColor);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.hero a {
+    background: var(--mainColor);
+    color: var(--whiteColor);
+    padding: 10px 15px;
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+/*--------------------------------------------------------------
+# End Hero
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+.about-us span {
+    color: var(--mainColor);
+    font-weight: 500;
+}
+
+.about-us h4 {
+    position: relative;
+    padding: 0 0 15px;
+    margin: 5px 0px 15px;
+    color: var(--blackColor);
+}
+
+.about-us h4::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: var(--mainColor);
+    left: 0;
+    bottom: 0;
+}
+
+.about-us p {
+    margin-bottom: 10px;
+}
+
+.about-us a {
+    background: var(--mainColor);
+    color: var(--whiteColor);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.about-us a:hover {
+    background-image: linear-gradient(to right, rgba(0,0,0, 0.05), rgba(0,0,0, 0.05));
+    color: var(--whiteColor);
+}
+/*--------------------------------------------------------------
+# End About-us
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Services
+--------------------------------------------------------------*/
+.service .service-box {
+    border: 1px solid var(--mainColor);
+    padding: 20px;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+
+.service .service-box:hover {
+    background-color: var(--mainColor);
+    color: var(--whiteColor);
+}
+
+.service .service-box:hover .icon,
+.service .service-box:hover h4 {
+    color: var(--whiteColor);
+}
+
+.service .service-box .icon {
+    font-size: 60px;
+    color: var(--mainColor);
+    margin-bottom: 15px;
+}
+
+.service .service-box h4 {
+    color: var(--blackColor);
+}
+
+.service .service-box p {
+    line-height: 2;
+}
+/*--------------------------------------------------------------
+# End Services
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Counts
+--------------------------------------------------------------*/
+.count {
+    background: url("../img/hero/hero_1.jpg") no-repeat top fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.count::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(16 137 255 / 76%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.count .container {
+    position: relative;
+    color: var(--whiteColor);
+}
+
+.count span {
+    font-size: 45px;
+    font-weight: 500;
+}
+/*--------------------------------------------------------------
+# End Counts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Destinations
+--------------------------------------------------------------*/
+.destination .dest-box {
+    box-shadow: 0 0 20px -5px rgb(0 0 0 / 33%);
+}
+
+.destination .dest-box .dest-content {
+    padding: 20px 10px;
+}
+
+.destination .dest-box .dest-content a {
+    color: var(--blackColor);
+    font-weight: 500;
+}
+
+.destination .dest-box .dest-content a .icon {
+    color: var(--mainColor);
+    font-size: 20px;
+}
+
+.destination .dest-box .dest-content .dest-info p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.destination .dest-box .dest-content .dest-info p .icon {
+    margin-right: 5px;
+}
+/*--------------------------------------------------------------
+# End Destinations
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Oder Now
+--------------------------------------------------------------*/
+.order .order-bx span {
+    color: var(--mainColor);
+    font-weight: 600;
+}
+
+.order .order-box h3 {
+    position: relative;
+    margin-bottom: 30px;
+    color: var(--blackColor);
+}
+
+.order .order-box h3::after {
+    content: "";
+    position: absolute;
+    background: var(--mainColor);
+    width: 50px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    top: 45px;
+}
+
+.order .order-box form .form-group {
+    margin-bottom: 15px;
+}
+
+.order .order-box form .form-group label {
+    display: block;
+}
+
+.order .order-box form .form-group input {
+    width: 100%;
+    outline: none;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+.order .order-box form .form-group select {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+}
+
+.order .order-box form .btn {
+    text-align: start;
+    margin-top: 35px;
+}
+
+.order .order-box form .btn a {
+    background: var(--mainColor);
+    color: var(--whiteColor);
+    padding: 15px 45px;
+    border-radius: 5px;
+}
+/*--------------------------------------------------------------
+# End Oder Now
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Team
+--------------------------------------------------------------*/
+.team .team-content .team-figure {
+    position: relative;
+    overflow: hidden;
+}
+
+.team .team-content .team-figure img {
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.team .team-content .team-figure:hover img {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.team .team-content  .team-figure .team-social {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+.team .team-content .nav-team li {
+    padding: 5px 10px;
+    background-color: var(--whiteColor);
+    margin-bottom: 10px;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.team .team-content .nav-team li:hover {
+    background-color: var(--mainColor);
+}
+
+.team .team-content .nav-team li a {
+    color: var(--mainColor);
+}
+
+.team .team-content .nav-team li:hover a {
+    color: var(--whiteColor);
+}
+
+.team .team-content .team-info {
+    margin-top: 20px;
+}
+
+.team .team-content .team-info h3 {
+    color: var(--blackColor);
+}
+
+.team .team-content .team-info span {
+    color: var(--mainColor);
+}
+/*--------------------------------------------------------------
+# End Team
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Testimonials
+--------------------------------------------------------------*/
+.testmonila .testmonial-item .block {
+    padding: 15px;
+    border: 1px solid #eee;
+    font-style: italic;
+}
+
+.testmonila .testmonial-item .block i {
+    color: var(--mainColor);
+}
+
+.testmonila .testmonial-item .testmonial-content {
+    display: flex;
+}
+
+.testmonila .testmonial-item .testmonial-content img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.testmonila .testmonial-item .testmonial-content h5 {
+    color: var(--blackColor);
+    margin: 0;
+}
+/*--------------------------------------------------------------
+# End Testimonials
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start More-Testimonials
+--------------------------------------------------------------*/
+.more-testmonila .box img {
+    width: 50%;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.more-testmonila .box span {
+    color: var(--mainColor);
+}
+/*--------------------------------------------------------------
+# End more-Testimonials
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Touch
+--------------------------------------------------------------*/
+.touch {
+    background: url("../img/hero/hero_2.jpg") no-repeat top fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.touch::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(16 137 255 / 76%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.touch .container {
+    color: var(--whiteColor);
+    position: relative;
+}
+
+.touch .container p {
+    margin: 10px 0 25px 0;
+}
+
+.touch .container a {
+    color: var(--whiteColor);
+    background: #ffa139;
+    padding: 15px 40px;
+    border-radius: 5px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.touch .container a:hover {
+    background-color: #fa9d32;
+    color: var(--whiteColor);
+}
+/*--------------------------------------------------------------
+# End Touch
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Blog
+--------------------------------------------------------------*/
+.blog .blog-box {
+    cursor: pointer;
+}
+
+.blog .blog-box .blog-img img {
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.blog .blog-box .blog-img:hover img {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.blog .blog-box h4 {
+    color: var(--blackColor);
+}
+
+.blog .blog-box p a {
+    margin: 0 5px;
+}
+/*--------------------------------------------------------------
+# End Blog
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Starrt Contact-Us
+--------------------------------------------------------------*/
+.contact .contact-info .form-info {
+    margin-bottom: 20px;
+}
+
+.contact .contact-info .form-info label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.contact .contact-info .form-info input,
+.contact .contact-info .form-info textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+.contact .contact-info .form-info textarea {
+    resize: none;
+}
+
+.contact .contact-info .btn {
+    background: var(--mainColor);
+    padding: 10px 70px;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.contact .contact-info .btn:hover {
+    background-image: linear-gradient(to right, rgba(0,0,0, 0.05), rgba(0,0,0, 0.05));
+    color: var(--whiteColor);
+}
+
+.contact .contact-info .btn a {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--whiteColor);
+}
+/*--------------------------------------------------------------
+# End Contact-Us
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Start Footer
+--------------------------------------------------------------*/
+.footer {
+    background: var(--bgColor);
+    padding: 70px 0;
+}
+
+.footer .footer-content {
+    margin: 0 0 30px;
+}
+
+.footer .footer-content .footer-info p {
+    margin: 20px 0;
+}
+
+.footer .footer-content .footer-info h5 {
+    color: var(--blackColor);
+    text-transform: uppercase;
+}
+
+.footer .footer-content .footer-info h5 span {
+    border-bottom: 2px solid var(--mainColor);
+}
+
+.footer .footer-content .footer-info ul {
+    margin-top: 20px;
+}
+
+.footer .footer-content .footer-info ul li {
+    margin-bottom: 10px;
+}
+
+.footer .copy-right {
+    padding-top: 20px;
+}
+/*--------------------------------------------------------------
+# End Footer
+--------------------------------------------------------------*/
